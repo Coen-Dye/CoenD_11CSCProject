@@ -9,14 +9,12 @@ def menu():
         print("3. Quit")
         
         try:
-            userInput = int(input("Select your variable from 1 to 3 (1 - Rock Paper Scissors, 2 - High Low Game, 3 - Quit): "))
+            userInput = int(input("Enter your choice (1-3): ")) 
             if userInput < 1 or userInput > 3:
                 print("Invalid input. Please enter a number between 1 and 3.")
-            if userInput == 3:
-                print("Goodbye!")
-                Flag = False
-            elif userInput in [1, 2]:
+            else:
                 return userInput
         except ValueError:
-            print("Please enter a valid integer.")
-menu()
+            print("Invalid input, enter a valid integer.")
+
+gameOption = menu()
