@@ -92,19 +92,16 @@ def play_rps(username):
 
         winner = determine_winner(user_choice, computer_choice)
 
+        print(f"\nYou chose: {user_choice}")
+        print(f"The computer chose: {computer_choice}")
+        
         if winner == "user":
             wins += 1
-            print(f"\nYou chose: {user_choice}")
-            print(f"The computer chose: {computer_choice}")
             print("\nCongratulations! You win!")
         elif winner == "computer":
-            print(f"\nYou chose: {user_choice}")
-            print(f"The computer chose: {computer_choice}")
             print("\nSorry, you lose!")
             continue_playing = False
         else:
-            print(f"\nYou chose: {user_choice}")
-            print(f"The computer chose: {computer_choice}")
             print("\nIt's a draw! Let's keep playing.")
 
     print(f"Total wins: {wins}")
