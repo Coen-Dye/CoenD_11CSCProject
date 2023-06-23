@@ -32,8 +32,8 @@ def menu(): #Menu function
 
 def get_user_choice(username):
     valid_choices = ['rock', 'paper', 'scissors']
-    flag = True
-    while flag:
+    flag1 = True
+    while flag1:
         try:
             user_choice = str(input(f"Please enter your choice {username} (rock/paper/scissors): ").lower())
             if user_choice not in valid_choices:
@@ -58,8 +58,8 @@ def determine_winner(user_choice, computer_choice):
         return "computer"
 
 def play_again(username):
-    flag = True
-    while flag:
+    flag2 = True
+    while flag2:
         try:
             play_again_input = input(f"\nDo you want to play again {username}? (yes/no): ").lower()
             if play_again_input not in ['yes', 'no']:
@@ -67,19 +67,6 @@ def play_again(username):
             return play_again_input
         except ValueError:
             print("Invalid input. Please enter yes or no.")
-
-def display_result(result, user_choice, computer_choice, wins):
-    print(f"You chose: {user_choice}")
-    print(f"The computer chose: {computer_choice}")
-    if result == "draw":
-        print("It's a draw!")
-    elif result == "user":
-        print("Congratulations! You win!")
-        wins += 1
-    else:
-        print("Sorry, you lose!")
-    print(f"Total wins: {wins}")
-    return wins
 
 # Main program
 def play_rps(username):

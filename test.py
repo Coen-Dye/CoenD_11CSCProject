@@ -8,7 +8,6 @@ def get_user_choice():
             user_choice = str(input("Please enter your choice 'username' (rock/paper/scissors): ").lower())
             if user_choice not in valid_choices:
                 raise ValueError
-            flag1 = False
             return user_choice
         except ValueError:
             print("Invalid choice. Please enter rock, paper, or scissors.")
@@ -35,7 +34,6 @@ def play_again():
             play_again_input = input("\nDo you want to play again 'username'? (yes/no): ").lower()
             if play_again_input not in ['yes', 'no']:
                 raise ValueError
-            flag2 = False
             return play_again_input
         except ValueError:
             print("Invalid input. Please enter yes or no.")
