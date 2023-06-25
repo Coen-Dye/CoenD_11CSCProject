@@ -81,15 +81,15 @@ def play_again():
 # Main program to play the game
 def play_hlg():
     show_instructions()
-    mainFlag = True
-    while mainFlag:
+    flag5 = True
+    while flag5:
         rounds = get_rounds()
 
         for i in range(rounds):
             play_round()
 
         if not play_again():
-            mainFlag = False
+            flag5 = False
 
 # Start the game
 play_hlg()
