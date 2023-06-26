@@ -60,7 +60,7 @@ def playRound():
 def playAgain():
     flag4 = True
     while flag4:
-        play_again = input("Do you want to play again? (yes/no): ").lower()
+        play_again = input("\nDo you want to play again? (yes/no): ").lower()
         if play_again == "no":
             print("Thanks for playing!")
             return False
@@ -71,7 +71,7 @@ def playAgain():
 
 # Main program to play the game
 def play_hlg():
-    print("----------Welcome to the High Low Game!----------")
+    print("\n----------Welcome to the High Low Game!----------")
     print("Guess the secret number from 1-100 within 9 tries to win.")
     flag5 = True
     while flag5:
