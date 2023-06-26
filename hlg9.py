@@ -1,12 +1,7 @@
 import random
 
-# Function to display game instructions
-def show_instructions():
-    print("----------Welcome to the High Low Game!----------")
-    print("Guess the secret number from 1-100 within 9 tries to win.")
-
 # Function to get the number of rounds to play
-def get_rounds():
+def getRounds():
     flag1 = True 
     while flag1:
         try:
@@ -18,12 +13,8 @@ def get_rounds():
             print("Invalid input. Please choose at least 1 round.")
     return rounds
 
-# Function to generate a random secret number
-def generate_secret_number():
-    return random.randint(1, 100) # Generates a number from 1-100
-
 # Function to get the user's guess
-def get_guess():
+def getGuess():
     flag2 = True
     while flag2:
         try:
@@ -36,7 +27,7 @@ def get_guess():
     return guess
 
 # Function to check the user's guess against the secret number
-def check_guess(guess, secret_number, attempts):
+def guessCheck(guess, secret_number, attempts):
     if guess == secret_number:
         print("\nCongratulations! You guessed the secret number.")
         return True
@@ -48,8 +39,8 @@ def check_guess(guess, secret_number, attempts):
     return False
 
 # Function to play a single round of the game
-def play_round():
-    secret_number = generate_secret_number()
+def playRound():
+    secret_number = random.randint(1, 100)
     attempts = 9
 
     print("\n-----Next round has begun!-----")
@@ -57,16 +48,16 @@ def play_round():
     flag3 = False  # Track if the guess is correct
 
     while attempts > 0 and flag3 == False:
-        guess = get_guess()
+        guess = getGuess()
         attempts -= 1
 
-        flag3 = check_guess(guess, secret_number, attempts)
+        flag3 = guessCheck(guess, secret_number, attempts)
 
     if flag3 == False:
         print(f"Out of attempts! The secret number was {secret_number}.")
 
 # Function to ask if the player wants to play again
-def play_again():
+def playAgain():
     flag4 = True
     while flag4:
         play_again = input("Do you want to play again? (yes/no): ").lower()
@@ -80,15 +71,16 @@ def play_again():
 
 # Main program to play the game
 def play_hlg():
-    show_instructions()
+    print("----------Welcome to the High Low Game!----------")
+    print("Guess the secret number from 1-100 within 9 tries to win.")
     flag5 = True
     while flag5:
-        rounds = get_rounds()
+        rounds = getRounds()
 
         for i in range(rounds):
-            play_round()
+            playRound()
 
-        if not play_again():
+        if not playAgain():
             flag5 = False
 
 # Start the game
