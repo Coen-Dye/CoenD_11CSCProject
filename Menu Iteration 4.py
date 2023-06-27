@@ -1,12 +1,11 @@
 def menu(): #Menu function
+    print()
+    print("-------Welcome to the Game Compendium!-------")  #Introduces user to game compendium
+    username = str(input("Please enter your username for this game: ")) 
+    print(f"\nHi {username}, Please select an option out of the following:") # Menu options
     Flag = True 
-    while Flag is True:  #Flag loop
-        print()
-        print("-------Welcome to the Game Compendium!-------")  #Introduces user to game compendium
-        username = str(input("Please enter your username: ")) 
-        print()
-        print(f"Hi {username}, Please select an option out of the following:") # Menu options
-        print("1. Rock Paper Scissors")
+    while Flag is True:
+        print("\n1. Rock Paper Scissors")
         print("2. High Low Game")
         print("3. Quit")
 
@@ -18,15 +17,12 @@ def menu(): #Menu function
             else:
                 if userInput == 1:
                     print("Launching Rock Paper Scissors...")
-                    rps() #Call to rps
+                    play_rps(username) #Call to rps
                 elif userInput == 2:
                     print("Launching High Low Game...")
-                    high_low_game() #Call to high low game
+                    play_hlg() #Call to high low game
                 elif userInput == 3:
                     print(f"Thank you for playing. Goodbye {username}!") #Farewell message
                     Flag = False #Quit program
         except ValueError: #Valid integer checking
             print("Invalid input, enter a valid integer.")
-    return username #Returns username for future functions
-
-username = menu()
