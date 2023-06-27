@@ -1,56 +1,88 @@
 import random
 
-def play_game():
-    print("Welcome to the High Low Game!")
-    print("Guess the secret number to win.")
-
-    while True:
+# Function to get the number of rounds to play
+def getRounds():
+    flag1 = True 
+    while flag1:
         try:
-            rounds = int(input("How many rounds do you want to play? "))
-            break
+            rounds = int(input("\nHow many rounds do you want to play?: "))
+            if rounds < 1:
+                raise ValueError
+            flag1 = False
         except ValueError:
-            print("Invalid input. Please enter a valid integer.")
+            print("Invalid input. Please choose at least 1 round.")
+    return rounds
 
-    for _ in range(rounds):
-        secret_number = random.randint(1, 100)
-        attempts = 9
+# Function to get the user's guess
+def getGuess():
+    flag2 = True
+    while flag2:
+        try:
+            guess = int(input("Enter your guess from 1-100: "))
+            if guess < 1 or guess > 100:
+                raise ValueError
+            flag2 = False
+        except ValueError:
+            print("\nInvalid input. Please enter a number from 1-100")
+    return guess
 
-        print("\nNew round started!")
-        print("Guess a number between 1 and 100.")
+# Function to check the user's guess against the secret number
+def guessCheck(guess, secret_number, attempts):
+    if guess == secret_number:
+        print("\nCongratulations! You guessed the secret number.")
+        return True
+    elif guess < secret_number:
+        print("\nToo low! Try a higher number.")
+    else:
+        print("\nToo high! Try a lower number.")
+    print(f"You have {attempts} attempts left.")
+    return False
 
-        while attempts > 0:
-            try:
-                guess = int(input("Enter your guess: "))
-                if guess < 1 or guess > 100:
-                    raise ValueError
-                attempts -= 1
+# Function to play a single round of the game
+def playRound():
+    secret_number = random.randint(1, 100)
+    attempts = 9
 
-                if guess == secret_number:
-                    print("Congratulations! You guessed the secret number.")
-                    break
-                elif guess < secret_number:
-                    print("Too low! Try a higher number.")
-                    print(f"You have {attempts} attempts left")
-                else:
-                    print("Too high! Try a lower number.")
-                    print(f"You have {attempts} attempts left")
-            except ValueError:
-                print("Invalid input. Please enter a number between 1 and 100.")
+    print("\n-----Next round has begun!-----")
 
-        if attempts == 0:
-            print(f"Out of attempts! The secret number was {secret_number}.")
+    flag3 = False  # Track if the guess is correct
 
-    while True:
-        play_again = input("Do you want to play again? (yes/no) ")
-        if play_again.lower() == "yes":
-            break
-        elif play_again.lower() == "no":
+    while attempts > 0 and flag3 == False:
+        guess = getGuess()
+        attempts -= 1
+
+        flag3 = guessCheck(guess, secret_number, attempts)
+
+    if flag3 == False:
+        print(f"Out of attempts! The secret number was {secret_number}.")
+
+# Function to ask if the player wants to play again
+def playAgain():
+    flag4 = True
+    while flag4:
+        play_again = input("\nDo you want to play again? (yes/no): ").lower()
+        if play_again == "no":
             print("Thanks for playing!")
-            return
+            return False
+        elif play_again == "yes":
+            return True
         else:
             print("Invalid input. Please enter 'yes' or 'no'.")
 
-    play_game()
+# Main program to play the game
+def play_hlg():
+    print("\n----------Welcome to the High Low Game!----------")
+    print("Guess the secret number from 1-100 within 9 tries to win.")
+    flag5 = True
+    while flag5:
+        rounds = getRounds()
+
+        for i in range(rounds):
+            playRound()
+
+        play = playAgain()
+        if play == False:
+            flag5 = False
 
 # Start the game
-play_game()
+play_hlg()
