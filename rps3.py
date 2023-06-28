@@ -1,6 +1,6 @@
 import random
 
-def get_user_choice():
+def getUserChoice():
     valid_choices = ['rock', 'paper', 'scissors']
     flag1 = True
     while flag1:
@@ -13,10 +13,10 @@ def get_user_choice():
         except ValueError:
             print("Invalid choice. Please enter rock, paper, or scissors.")
 
-def get_computer_choice():
+def getComputerChoice():
     return random.choice(['rock', 'paper', 'scissors'])
 
-def determine_winner(user_choice, computer_choice):
+def getWinner(user_choice, computer_choice):
     if user_choice == computer_choice:
         return "draw"
     elif (
@@ -28,7 +28,7 @@ def determine_winner(user_choice, computer_choice):
     else:
         return "computer"
 
-def play_again():
+def playAgain():
     flag2 = True
     while flag2:
         try:
@@ -46,10 +46,10 @@ def play_rps():
     wins = 0
     continue_playing = True
     while continue_playing:
-        user_choice = get_user_choice()
-        computer_choice = get_computer_choice()
+        user_choice = getUserChoice()
+        computer_choice = getComputerChoice()
 
-        winner = determine_winner(user_choice, computer_choice)
+        winner = getWinner(user_choice, computer_choice)
 
         print(f"\nYou chose: {user_choice}")
         print(f"The computer chose: {computer_choice}")
@@ -64,7 +64,7 @@ def play_rps():
             print("\nIt's a draw! Let's keep playing.")
 
     print(f"Total wins: {wins}")
-    play_again_input = play_again()
+    play_again_input = playAgain()
     if play_again_input == 'yes':
         play_rps()
     else:
