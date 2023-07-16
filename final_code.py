@@ -29,6 +29,7 @@ def menu(): #Menu function
         except ValueError: #Valid integer checking
             print("Invalid input, enter a valid integer.")
 
+#Rock Paper Scissors Code Starts
 
 def getUserChoice(username):  # Function to get the user's choice for Game 1
     valid_choices = ['rock', 'paper', 'scissors']
@@ -74,10 +75,10 @@ def play_rps(username):
     wins = 0
     continue_playing = True #Main boolean variable that creates the overall loop for the program
     while continue_playing:
-        user_choice = get_user_choice(username) #Calls the function to get the users choice
-        computer_choice = get_computer_choice() #Calls the function to get the computers choice
+        user_choice = getUserChoice(username) #Calls the function to get the users choice
+        computer_choice = getComputerChoice() #Calls the function to get the computers choice
 
-        winner = determine_winner(user_choice, computer_choice) #Calls the function that calculates the winner based on the previous inputs
+        winner = getWinner(user_choice, computer_choice) #Calls the function that calculates the winner based on the previous inputs
 
         print(f"\nYou chose: {user_choice}")
         print(f"The computer chose: {computer_choice}")
@@ -93,13 +94,14 @@ def play_rps(username):
 
     print(f"Total wins: {wins}") #Displays total wins that the user has accumulated in that round
 
-    play_again_input = play_again(username) #Calls the play again function after the user loses to ask if they wish to play again or return to menu
+    play_again_input = playAgain(username) #Calls the play again function after the user loses to ask if they wish to play again or return to menu
 
     if play_again_input == 'yes':
         play_rps(username)
     else:
         print(f"\nThanks for playing {username}! Returning to menu...") #This will output if they decide not to play again and the user will be returned to the menu
 
+#High Low Game Code Starts
 
 # Function to get the number of rounds to play
 def getRounds():
