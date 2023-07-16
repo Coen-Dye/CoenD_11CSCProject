@@ -70,5 +70,4 @@ def play_rps(username):
     else:
         print(f"\nThanks for playing 'username'! Returning to menu...") #This will output if they decide not to play again and the user will be returned to the menu
 
-
-play_rps()
+play_rps(username)
