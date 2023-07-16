@@ -26,3 +26,4 @@ def menu(): #Menu function
                     Flag = False #Quit program
         except ValueError: #Valid integer checking
             print("Invalid input, enter a valid integer.")
+menu()
