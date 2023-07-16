@@ -94,7 +94,7 @@ def play_rps(username):
 
     print(f"Total wins: {wins}") #Displays total wins that the user has accumulated in that round
 
-    play_again_input = playAgain(username) #Calls the play again function after the user loses to ask if they wish to play again or return to menu
+    play_again_input = playAgain() #Calls the play again function after the user loses to ask if they wish to play again or return to menu
 
     if play_again_input == 'yes':
         play_rps(username)
