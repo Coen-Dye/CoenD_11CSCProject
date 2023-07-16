@@ -30,7 +30,7 @@ def menu(): #Menu function
             print("Invalid input, enter a valid integer.")
 
 
-def get_user_choice(username):  # Function to get the user's choice for Game 1
+def getUserChoice(username):  # Function to get the user's choice for Game 1
     valid_choices = ['rock', 'paper', 'scissors']
     flag1 = True # flag1 is the flag for this function used to create a loop
     while flag1:
@@ -42,10 +42,10 @@ def get_user_choice(username):  # Function to get the user's choice for Game 1
         except ValueError:
             print("Invalid choice. Please enter rock, paper, or scissors.")
 
-def get_computer_choice(): #Function to get the computer's choice for future use
+def getComputerChoice(): #Function to get the computer's choice for future use
     return random.choice(['rock', 'paper', 'scissors']) #Uses a list and random.choice to choose a random string within the list
 
-def determine_winner(user_choice, computer_choice): #Function that uses calculations to determine the winner
+def getWinner(user_choice, computer_choice): #Function that uses calculations to determine the winner
     if user_choice == computer_choice:
         return "draw"
     elif ( #Block of code containing all possible winning combinations for the user
@@ -57,7 +57,7 @@ def determine_winner(user_choice, computer_choice): #Function that uses calculat
     else:
         return "computer"
 
-def play_again(username): #Play again function that asks the user whether they would like to continue or return to the menu
+def playAgain(username): #Play again function that asks the user whether they would like to continue or return to the menu
     flag2 = True
     while flag2:
         try:
