@@ -10,7 +10,7 @@ def getUserChoice(username):  # Function to get the user's choice for Game 1
                 raise ValueError #Raises the value error and outputs the error message
             return user_choice
         except ValueError:
-            print("Invalid choice. Please enter rock, paper, or scissors.")
+            print("\nInvalid choice. Please enter rock, paper, or scissors.")
 
 def getComputerChoice(): #Function to get the computer's choice for future use
     return random.choice(['rock', 'paper', 'scissors']) #Uses a list and random.choice to choose a random string within the list
@@ -36,7 +36,7 @@ def playAgain(username): #Play again function that asks the user whether they wo
                 raise ValueError
             return play_again_input
         except ValueError:
-            print("Invalid input. Please enter yes or no.")
+            print("\nInvalid input. Please enter yes or no.")
 
 # Main program
 def play_rps(username):

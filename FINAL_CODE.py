@@ -1,5 +1,5 @@
-import hlg3
-import rps3
+import hlg3 #Imports the code from High Low Game
+import rps3 #Imports the code from Rock Paper Scissors 
 
 def menu(): #Menu function
     print()
