@@ -29,7 +29,7 @@ def menu(): #Menu function
         except ValueError: #Valid integer checking
             print("Invalid input, enter a valid integer.")
 
-#Rock Paper Scissors Code Starts
+#Rock paper scissors code starts
 
 def getUserChoice(username):  # Function to get the user's choice for Game 1
     valid_choices = ['rock', 'paper', 'scissors']
@@ -58,7 +58,7 @@ def getWinner(user_choice, computer_choice): #Function that uses calculations to
     else:
         return "computer"
 
-def playAgain(username): #Play again function that asks the user whether they would like to continue or return to the menu
+def play_again(username): #Play again function that asks the user whether they would like to continue or return to the menu
     flag2 = True
     while flag2:
         try:
@@ -94,7 +94,7 @@ def play_rps(username):
 
     print(f"Total wins: {wins}") #Displays total wins that the user has accumulated in that round
 
-    play_again_input = playAgain() #Calls the play again function after the user loses to ask if they wish to play again or return to menu
+    play_again_input = play_again(username) #Calls the play again function after the user loses to ask if they wish to play again or return to menu
 
     if play_again_input == 'yes':
         play_rps(username)
