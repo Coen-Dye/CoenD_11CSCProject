@@ -1,3 +1,5 @@
+#This is not the final code, this is just the original code of the menu without the imports of other files for Game 1 and 2, to show my progress and how the project all began.
+
 def menu(): #Menu function
     print()
     print("-------Welcome to the Game Compendium!-------")  #Introduces user to game compendium
