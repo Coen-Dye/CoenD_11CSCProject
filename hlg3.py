@@ -70,8 +70,8 @@ def playAgain():
             print("Invalid input. Please enter 'yes' or 'no'.")
 
 # Main program to play the game
-def play_hlg():
-    print("\n----------Welcome to the High Low Game!----------")
+def play_hlg(username):
+    print(f"\n----------Welcome to the High Low Game {username}!----------")
     print("Guess the secret number from 1-100 within 9 tries to win.")
     flag5 = True
     while flag5:
@@ -84,5 +84,4 @@ def play_hlg():
         if play == False:
             flag5 = False
 
-# Start the game
-play_hlg()
+
