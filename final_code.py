@@ -29,6 +29,12 @@ def menu(): #Menu function
         except ValueError: #Valid integer checking
             print("Invalid input, enter a valid integer.")
 
+
+
+
+
+
+
 #Rock paper scissors code starts
 
 def getUserChoice(username):  # Function to get the user's choice for Game 1
@@ -100,6 +106,13 @@ def play_rps(username):
         play_rps(username)
     else:
         print(f"\nThanks for playing {username}! Returning to menu...") #This will output if they decide not to play again and the user will be returned to the menu
+
+
+
+
+
+
+
 
 #High Low Game Code Starts
 
